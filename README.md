@@ -18,9 +18,11 @@ All that said, this kind of utility can be fairly powerful for purposes such as 
 ## Usage
 This package doesn't include any executables, only a library to be used in other packages. Make sure to find_package this package (pointcloud_subtraction) in the CMakeLists.txt for the client package, and #include <pointcloud_subtraction/pointcloud_subtraction.h>
 
-Usage works as follows:
+The syntax to use the main subtraction function in cpp is as follows:
 
+```
 sensor_msgs::PointCloud2 output_msg = PointcloudSubtraction::subtractClouds(minuend, subtrahend, check_rgb, check_intensity, check_normals, min_dist, num_neighbors_compared);
+```
 
 - minuend/subtrahend: these are both sensor_msgs::PointCloud2 messages
 - check_rgb/intensity/normals: whether points must match in color, return intensity, and normal data in order to be considered identical and subtracted
