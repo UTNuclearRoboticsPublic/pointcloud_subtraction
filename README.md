@@ -24,7 +24,7 @@ The syntax to use the main subtraction function in cpp is as follows:
 sensor_msgs::PointCloud2 output_msg = PointcloudSubtraction::subtractClouds(minuend, subtrahend, check_rgb, check_intensity, check_normals, min_dist, num_neighbors_compared);
 ```
 
-- minuend/subtrahend: these are both sensor_msgs::PointCloud2 messages
-- check_rgb/intensity/normals: whether points must match in color, return intensity, and normal data in order to be considered identical and subtracted
-- min_dist: the threshold at which points are considered close enough to be subtracted
-- num_neighbors_compared: the number of neighbors to be checked against. Logic should dictate that this should be only one, to find the single nearest point that should be removed, except that breaks down in cases where multiple points are coincident. I had the best results with 3 here but a decision will have to be made based on the nature of the data. 
+- **minuend/subtrahend** *(sensor_msgs::PointCloud2):*   the operands of subtraction;  difference = minuend - subtrahend
+- **check_rgb/intensity/normals** *(bool):*   whether points must match in color, return intensity, and normal data in order to be considered identical and subtracted
+- **min_dist** *(float):*   the threshold at which points are considered close enough to be subtracted
+- **num_neighbors_compared** *(int):*   the number of neighbors to be checked against. Logic should dictate that this should be only one, to find the single nearest point that should be removed, except that breaks down in cases where multiple points are coincident. I had the best results with 3 here but a decision will have to be made based on the nature of the data. 
